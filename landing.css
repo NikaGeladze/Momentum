@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif; /*LATER-> find appropriate font*/
+  margin: 0px;
+  padding: 0px;
+}
+
+.landing {
+  height: 100px;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 30px 120px;
+}
+.landingbuttons {
+  width: 533px;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 40px;
+}
