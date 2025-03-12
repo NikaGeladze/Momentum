@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://free.bboxtype.com/embedfonts/?family=FiraGO:400");
 
 * {
-  font-family: "Roboto", sans-serif; /*LATER-> find appropriate font*/
+  font-family: "FiraGO", sans-serif;
   margin: 0px;
   padding: 0px;
 }
@@ -24,5 +24,38 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 40px;
+  gap: 45px;
+}
+.filterbtns {
+  width: 688px;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #dee2e6;
+  margin-left: 120px;
+}
+.filter {
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.taskcolumns {
+  margin-top: 30px;
+  width: 1680px;
+  margin-left: 120px;
+  display: flex;
+  justify-content: space-between;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
 }
