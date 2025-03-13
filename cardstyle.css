@@ -8,8 +8,20 @@
   align-items: center;
   padding: 20px;
   border-radius: 15px;
-  border: 1px solid #f7bc30; /*for todo*/
   gap: 28px;
+  cursor: pointer;
+}
+.todo {
+  border: 1px solid #ffbe0b;
+}
+.inprogress {
+  border: 1px solid #fb5607;
+}
+.testing {
+  border: 1px solid #ff006e;
+}
+.donecard {
+  border: 1px solid #3a86ff;
 }
 .cardheader {
   width: 341px;

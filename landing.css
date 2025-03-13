@@ -1,4 +1,9 @@
-@import url("https://free.bboxtype.com/embedfonts/?family=FiraGO:400");
+@font-face {
+  font-family: "FiraGO";
+  src: url("Font/FiraGO-Book.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {
   font-family: "FiraGO", sans-serif;
