@@ -1,15 +1,16 @@
 const toDoColumn = document.querySelector(".todocolumn");
 
 createCard(
-  "Images/Medium.png",
+  "Images/High.png",
   "მაღალი",
-  "აიტი",
-  "28 იანვ, 2022",
-  "ტესტ",
-  "ტესტი",
+  "აიტიი",
+  "30 მარტ, 2025",
+  "რიკი მაგარია",
+  "რიკტირკტირკტირკტრიტკ",
   "Images/coworker.png",
-  10
+  100
 );
+
 //ობიექტებში ჩაკვეხე ყველაფერი
 function createCard(
   primg,

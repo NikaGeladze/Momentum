@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>შექმენი დავალება</title>
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="taskCreation.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="landing">
+        <img
+          src="Images/MomentumLogo.png"
+          alt="MLogo"
+          width="210px"
+          height="38px"
+          onclick="window.location.href='index.html'"
+          style="cursor: pointer"
+        />
+        <div class="landingbuttons">
+          <button
+            style="
+              width: 225px;
+              height: 39px;
+              background-color: white;
+              font-size: 16px;
+              border-radius: 5px;
+              border: 1px solid #8338ec;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-weight: 400;
+              color: #212529;
+              cursor: pointer;
+            "
+          >
+            თანამშრომლის შექმნა
+          </button>
+
+          <button
+            style="
+              width: 268px;
+              height: 40px;
+              font-size: 16px;
+              border-radius: 5px;
+              background-color: #8338ec;
+              border: none;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-weight: 400;
+              color: white;
+              cursor: pointer;
+            "
+          >
+            <span style="font-size: 30px; margin-right: 5px">+</span> შექმენი
+            ახალი დავალება
+          </button>
+        </div>
+      </div>
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0px 120px;
+          font-size: 34px;
+          font-weight: 600;
+        "
+      >
+        დავალებების გვერდი
+      </div>
+      <div class="crcontainer">
+        <div class="creationdiv">
+          <div class="leftcreate">
+            <div class="topleft">
+              <div class="hdtext">სათაური<sup>*</sup></div>
+              <textarea
+                class="headerin"
+                name="headerin"
+                id="headerin"
+              ></textarea>
+              <div
+                class="hdconstraint2"
+                style="font-size: 10px; font-weight: 350px; color: #6c757d"
+              >
+                მინიმუმ 2 სიმბოლო
+              </div>
+              <div
+                class="hdconstraint255"
+                style="font-size: 10px; font-weight: 350px; color: #6c757d"
+              >
+                მაქსიმუმ 255 სიმბოლო
+              </div>
+            </div>
+            <div class="middleleft">
+              <div class="descrtxt">აღწერა</div>
+              <textarea name="descr" id="descr"></textarea>
+              <div
+                class="descrconstraint2"
+                style="font-size: 10px; font-weight: 350px; color: #6c757d"
+              >
+                მინიმუმ 2 სიმბოლო
+              </div>
+              <div
+                class="descrconstraint255"
+                style="font-size: 10px; font-weight: 350px; color: #6c757d"
+              >
+                მაქსიმუმ 255 სიმბოლო
+              </div>
+            </div>
+            <div class="leftfooter">
+              <div class="footleft">
+                <div>პრიორიტეტი<sup>*</sup></div>
+                <select
+                  id="priorityoptions"
+                  name="options"
+                  style="width: 259px; height: 46px; padding: 14px"
+                >
+                  <option value="lowprio">Option 1</option>
+                  <option value="medprio">Option 2</option>
+                  <option value="highprio">Option 3</option>
+                </select>
+              </div>
+              <div class="footright">
+                <div>სტატუსი<sup>*</sup></div>
+                <select id="statusoptions" name="options">
+                  <option value="start">Opt1</option>
+                  <option value="inprogress">Option 2</option>
+                  <option value="testing">Option 3</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="rightcreate">
+            <div class="depdiv">
+              <div>დეპარტმენტი<sup>*</sup></div>
+              <select id="statusoptions" name="options">
+                <option value="start">Option 1</option>
+                <option value="inprogress">Option 2</option>
+                <option value="testing">Option 3</option>
+              </select>
+            </div>
+            <div class="coworkerdiv">
+              <div>პასუხისმგებელი თანამშრომელი<sup>*</sup></div>
+              <select id="statusoptions" name="options">
+                <option value="start">Option 1</option>
+                <option value="inprogress">Option 2</option>
+                <option value="testing">Option 3</option>
+              </select>
+            </div>
+            <div class="deadlinediv">
+              <div>დედლაინი</div>
+              <input type="date" id="date" name="date" />
+            </div>
+            <button class="createbtn">დავალების შექმნა</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

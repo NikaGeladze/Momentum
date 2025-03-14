@@ -1,0 +1,28 @@
+.landing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 100px;
+  background-color: white;
+  z-index: 1000;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 30px 120px;
+}
+
+.landingbuttons {
+  width: 533px;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 45px;
+  padding-top: 120px;
+}

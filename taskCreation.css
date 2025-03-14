@@ -1,0 +1,122 @@
+@font-face {
+  font-family: "FiraGO";
+  src: url("Font/FiraGO-Book.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "FiraGO", sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+.crcontainer {
+  width: 1684px;
+  height: 958px;
+  margin-left: 120px;
+  border-radius: 4px;
+  border: 0.3px solid #ddd2ff;
+  background-color: #fbf9ffa6;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 80px 0px 0px 80px;
+}
+.creationdiv {
+  width: 1200px;
+  height: 674px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.leftcreate {
+  width: 550px;
+  height: 674px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 55px;
+}
+
+.topleft {
+  width: 550px;
+  height: 106px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.middleleft {
+  width: 550px;
+  height: 196px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.leftfooter {
+  width: 550px;
+  height: 76px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 200px;
+}
+.footleft,
+.footright {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.rightcreate {
+  width: 550px;
+  height: 674px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 55px;
+  margin-right: 300px;
+}
+#priorityoptions option {
+  background-color: white;
+}
+.depdiv,
+.coworkerdiv {
+  width: 550px;
+  height: 76px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+}
+.deadlinediv {
+  width: 320px;
+  height: 76px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+}
+#headerin {
+  width: 550px;
+  height: 133px;
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+  text-align: left;
+  padding: 14px;
+}
+#descr {
+  width: 550px;
+  height: 133px;
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+  text-align: left;
+  vertical-align: top;
+  padding: 14px;
+}
