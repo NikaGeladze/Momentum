@@ -9,6 +9,7 @@
   font-family: "FiraGO", sans-serif;
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 .crcontainer {
   width: 1684px;
@@ -29,7 +30,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 60px;
+  gap: 150px;
 }
 
 .leftcreate {
@@ -60,8 +61,8 @@
   width: 550px;
   height: 76px;
   display: flex;
+  gap: 32px;
   justify-content: flex-start;
-  gap: 200px;
 }
 .footleft,
 .footright {
@@ -75,22 +76,49 @@
   height: 674px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 55px;
-  margin-right: 300px;
+  justify-content: flex-start;
+  gap: 90px;
 }
 #priorityoptions option {
   background-color: white;
 }
+#statusoptions option {
+  background-color: white;
+}
+#priorityoptions,
+#statusoptions {
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+  background-color: white;
+}
+
+#date {
+  width: 318px;
+  height: 45px;
+  border-radius: 5px;
+  border: 1px;
+  padding: 14px;
+  border: 1px solid #dee2e6;
+}
+
+#departmentslct,
+#coworkerslct {
+  width: 550px;
+  height: 45px;
+  padding: 14px;
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+  background-color: white;
+}
+
 .depdiv,
 .coworkerdiv {
   width: 550px;
   height: 76px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 4px;
 }
 .deadlinediv {
@@ -99,9 +127,22 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 4px;
+  margin-top: 80px;
+}
+.createbtn {
+  width: 208px;
+  height: 42px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #8338ec;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  align-self: flex-end;
 }
 #headerin {
   width: 550px;
