@@ -6,6 +6,8 @@
     <title>შექმენი დავალება</title>
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="taskCreation.css" />
+    <script src="FetchData.js" defer></script>
+    <script src="Validation.js" defer></script>
   </head>
   <body>
     <div class="main">
@@ -37,7 +39,6 @@
           >
             თანამშრომლის შექმნა
           </button>
-
           <button
             style="
               width: 268px;
@@ -101,7 +102,7 @@
                 class="descrconstraint2"
                 style="font-size: 10px; font-weight: 350px; color: #6c757d"
               >
-                მინიმუმ 2 სიმბოლო
+                მინიმუმ 4 სიტყვა
               </div>
               <div
                 class="descrconstraint255"
@@ -111,16 +112,28 @@
               </div>
             </div>
             <div class="leftfooter">
+              <img
+                src="Images/Low.png"
+                alt=""
+                width="22"
+                height="22"
+                style="position: absolute; margin-top: 35px; margin-left: 7px"
+                class="prioimg"
+              />
+
               <div class="footleft">
                 <div>პრიორიტეტი<sup>*</sup></div>
                 <select
                   id="priorityoptions"
                   name="options"
-                  style="width: 259px; height: 46px; padding: 14px"
+                  style="
+                    width: 259px;
+                    height: 46px;
+                    padding: 14px;
+                    padding-left: 30px;
+                  "
                 >
-                  <option value="lowprio">Option 1</option>
-                  <option value="medprio">Option 2</option>
-                  <option value="highprio">Option 3</option>
+                  <!--<option value="lowprio">img<src=icon width=22 height=22> საშუალო</option>  !-->
                 </select>
               </div>
               <div class="footright">
@@ -129,30 +142,31 @@
                   id="statusoptions"
                   name="options"
                   style="width: 259px; height: 46px; padding: 14px"
-                >
-                  <option value="lowprio">Option 1</option>
-                  <option value="medprio">Option 2</option>
-                  <option value="highprio">Option 3</option>
-                </select>
+                ></select>
               </div>
             </div>
           </div>
           <div class="rightcreate">
             <div class="depdiv">
               <div>დეპარტმენტი<sup>*</sup></div>
-              <select id="departmentslct" name="options">
-                <option value="start">Option 1</option>
-                <option value="inprogress">Option 2</option>
-                <option value="testing">Option 3</option>
-              </select>
+              <select id="departmentoptions" name="options"></select>
             </div>
             <div class="coworkerdiv">
               <div>პასუხისმგებელი თანამშრომელი<sup>*</sup></div>
-              <select id="coworkerslct" name="options">
-                <option value="start">Option 1</option>
-                <option value="inprogress">Option 2</option>
-                <option value="testing">Option 3</option>
-              </select>
+              <select id="coworkerslct" name="options"></select>
+              <div
+                style="
+                  font-size: 16px;
+                  color: #8338ec;
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                  cursor: pointer;
+                "
+              >
+                <img src="Images/pluscoworker.png" alt="addcwk" /> დაამატე
+                თანამშრომელი
+              </div>
             </div>
             <div class="deadlinediv">
               <div>დედლაინი</div>

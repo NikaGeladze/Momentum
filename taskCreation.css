@@ -101,7 +101,7 @@
   border: 1px solid #dee2e6;
 }
 
-#departmentslct,
+#departmentoptions,
 #coworkerslct {
   width: 550px;
   height: 45px;
@@ -151,6 +151,7 @@
   border: 1px solid #dee2e6;
   text-align: left;
   padding: 14px;
+  resize: none;
 }
 #descr {
   width: 550px;
@@ -160,4 +161,5 @@
   text-align: left;
   vertical-align: top;
   padding: 14px;
+  resize: none;
 }
