@@ -1,0 +1,67 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.coworkercreate {
+  position: relative;
+  box-sizing: border-box;
+  width: 913px;
+  height: 766px;
+  padding: 40px 50px 60px 50px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border: none;
+  z-index: 3000;
+  gap: 37px;
+}
+.namesurname {
+  display: flex;
+  justify-content: space-between;
+  gap: 45px;
+}
+
+.avatarslct {
+  box-sizing: border-box;
+  width: 813px;
+  height: 145px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.avatarbox {
+  box-sizing: border-box;
+  width: 813px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  border: 2px dotted #ced4daaf;
+}
+.depslct {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.cancelbtns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 22px;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
