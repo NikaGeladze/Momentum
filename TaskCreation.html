@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="taskCreation.css" />
     <script src="FetchData.js" defer></script>
     <script src="Validation.js" defer></script>
+    <script type="module" src="getTaskInput.js" defer></script>
   </head>
   <body>
     <div class="main">
@@ -153,6 +154,21 @@
             </div>
             <div class="coworkerdiv">
               <div>პასუხისმგებელი თანამშრომელი<sup>*</sup></div>
+              <img
+                src="Images/coworker.png"
+                alt=""
+                width="30px"
+                height="30px"
+                style="
+                  position: absolute;
+                  margin-top: 33px;
+                  margin-left: 15px;
+                  border-radius: 50%;
+                  object-fit: cover;
+                  display: none;
+                "
+                class="coworkerimg"
+              />
               <select id="coworkerslct" name="options"></select>
               <div
                 style="

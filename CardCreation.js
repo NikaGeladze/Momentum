@@ -1,18 +1,6 @@
 const toDoColumn = document.querySelector(".todocolumn");
 
-createCard(
-  "Images/High.png",
-  "მაღალი",
-  "აიტიი",
-  "30 მარტ, 2025",
-  "რიკი მაგარია",
-  "რიკტირკტირკტირკტრიტკ",
-  "Images/coworker.png",
-  100
-);
-
-//ობიექტებში ჩაკვეხე ყველაფერი
-function createCard(
+export function createCard(
   primg,
   prtext,
   deptxt,
@@ -64,6 +52,8 @@ function createCard(
 
   let coworkerimg = document.createElement("img");
   coworkerimg.src = coworker;
+  coworkerimg.style =
+    "width:31px;height:31px;border-radius:50%;object-fit:cover;";
 
   let commentsdiv = document.createElement("div");
   commentsdiv.classList.add("comments");
@@ -96,4 +86,35 @@ function createCard(
   card.appendChild(cardfooter);
 
   toDoColumn.appendChild(card);
+}
+
+export async function uploadTask(task) {
+  const token = "9e788fde-10d9-4ca8-9d09-9ca169c0db4c";
+
+  const formData = new URLSearchParams();
+  formData.append("name", task.name);
+  formData.append("description", task.description);
+  formData.append("due_date", task.due_date);
+  formData.append("status_id", task.status.id);
+  formData.append("priority_id", task.priority.id);
+  formData.append("department_id", task.department.id);
+  formData.append("employee_id", task.employee.id);
+
+  try {
+    const response = await fetch(
+      "https://momentum.redberryinternship.ge/api/tasks",
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      }
+    );
+
+    const data = await response.json();
+    console.log("Task uploaded successfully:", data);
+  } catch (error) {
+    console.error("Error uploading task:", error);
+  }
 }

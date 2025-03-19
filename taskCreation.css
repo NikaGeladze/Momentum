@@ -110,6 +110,9 @@
   border: 1px solid #dee2e6;
   background-color: white;
 }
+#coworkerslct {
+  padding-left: 50px;
+}
 
 .depdiv,
 .coworkerdiv {

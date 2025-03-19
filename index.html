@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="cardstyle.css" />
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="coworkerModule.css" />
-    <script src="CardCreation.js" defer></script>
+    <script type="module" src="CardCreation.js" defer></script>
     <script src="controlCoworkerDiv.js" defer></script>
+    <script src="handleFrontData.js" defer></script>
+    <script src="employeeCreation.js" defer></script>
+    <script type="module" src="parseCards.js" defer></script>
   </head>
   <body>
     <div class="main">
@@ -133,6 +136,7 @@
                 alt="Coworker"
                 width="31px"
                 height="31px"
+                style="border-radius: 50%; object-fit: cover"
               />
               <div class="comments">
                 <img
@@ -288,13 +292,20 @@
             <div style="font-size: 14px; font-weight: 600; color: #343a40">
               ავატარი<sup>*</sup>
             </div>
-            <div class="avatarbox">
+            <div id="avatarbox">
               <img
-                src="Images/coworker2j.jpeg"
+                src="Images/coworker3j.jpeg"
                 alt="cw"
                 width="88px"
                 height="88px"
                 style="border-radius: 50%; object-fit: cover"
+                id="avatarimg"
+              />
+              <input
+                type="file"
+                id="fileInput"
+                accept="image/*"
+                style="display: none"
               />
             </div>
           </div>
@@ -345,6 +356,7 @@
                 color: white;
                 cursor: pointer;
               "
+              onclick="addEmployee();"
             >
               დაამატე თანამშრომელი
             </button>
@@ -352,23 +364,5 @@
         </div>
       </div>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let element = document.querySelector(".crcontent");
-        let text = element.textContent.trim();
-
-        if (text.length > 100) {
-          element.textContent = text.substring(0, 100) + "...";
-        }
-        document.addEventListener("click", function (event) {
-          const coworkerDiv = document.querySelector(".coworkercreate");
-
-          if (!coworkerDiv.contains(event.target)) {
-            coworkerDivVisible(false);
-          }
-        });
-      });
-    </script>
   </body>
 </html>

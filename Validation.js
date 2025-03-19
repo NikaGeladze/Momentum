@@ -1,6 +1,6 @@
-const textareahd = document.getElementById("headerin");
-const constraintMinhd = document.querySelector(".hdconstraint2");
-const constraintMaxhd = document.querySelector(".hdconstraint255");
+const textareaname = document.getElementById("headerin");
+const minnametext = document.querySelector(".hdconstraint2");
+const maxnametext = document.querySelector(".hdconstraint255");
 
 const textareads = document.getElementById("descr");
 const constraintMinds = document.querySelector(".descrconstraint2");
@@ -10,24 +10,24 @@ let isValidHeader = false;
 
 let isValidDescr = true;
 
-textareahd.addEventListener("input", function () {
-  const textLength = textareahd.value.length;
+textareaname.addEventListener("input", function () {
+  const textLength = textareaname.value.length;
 
-  if (textareahd.value === "") {
-    constraintMinhd.style.color = "#6c757d";
-    constraintMaxhd.style.color = "#6c757d";
+  if (textareaname.value === "") {
+    minnametext.style.color = "#6c757d";
+    maxnametext.style.color = "#6c757d";
   }
 
   if (textLength > 2) {
-    constraintMinhd.style.color = "green";
+    minnametext.style.color = "green";
   } else {
-    constraintMinhd.style.color = "#6c757d";
+    minnametext.style.color = "#6c757d";
   }
 
   if (textLength <= 255 && textLength != 0) {
-    constraintMaxhd.style.color = "green";
+    maxnametext.style.color = "green";
   } else {
-    constraintMaxhd.style.color = "#6c757d";
+    maxnametext.style.color = "#6c757d";
   }
 
   isValidHeader = textLength > 2 && textLength <= 255;
@@ -60,7 +60,7 @@ textareads.addEventListener("input", function () {
   }
 });
 
-const btn = document.querySelector(".createbtn");
-btn.addEventListener("click", function () {
-  console.log(isValidDescr && isValidHeader);
-});
+// const btn = document.querySelector(".createbtn");
+// btn.addEventListener("click", function () {
+//   console.log(isValidDescr && isValidHeader);
+// });
