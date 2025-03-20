@@ -36,7 +36,6 @@
   align-items: center;
 }
 .prioritydiv {
-  /*for medium priority*/
   border-radius: 4px;
   padding: 4px;
   display: flex;

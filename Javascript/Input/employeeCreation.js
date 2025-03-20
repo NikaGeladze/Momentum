@@ -33,8 +33,6 @@ function validateEmployee(emp) {
   if (emp.name.length < 2) {
     minnametext.style.color = "red";
     isValid = false;
-  } else {
-    minnametext.style.color = "black";
   }
 
   if (emp.name.length > 255) {
