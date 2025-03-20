@@ -1,6 +1,6 @@
 @font-face {
   font-family: "FiraGO";
-  src: url("Font/FiraGO-Book.otf") format("opentype");
+  src: url("../../Font/FiraGO-Book.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }

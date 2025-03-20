@@ -55,11 +55,11 @@ export function createCard(
   switch (deptxt) {
     case "ადმინისტრაციის დეპარტამენტი":
       depdiv.classList.add("administrationdep");
-      depdiv.textContent = "ადმინისტრაცია";
+      depdiv.textContent = "ადმინისტრ.";
       break;
     case "ადამიანური რესურსების დეპარტამენტი":
       depdiv.classList.add("HRdep");
-      depdiv.textContent = "ადამიანური რეს.";
+      depdiv.textContent = "ადამ. რეს.";
       break;
     case "ფინანსების დეპარტამენტი":
       depdiv.classList.add("financesdep");
@@ -95,7 +95,11 @@ export function createCard(
 
   let crheader = document.createElement("div");
   crheader.classList.add("crheader");
-  crheader.textContent = header;
+  if (header.length > 35) {
+    crheader.textContent = header.substring(0, 35) + "...";
+  } else {
+    crheader.textContent = header;
+  }
 
   let crcontent = document.createElement("div");
   crcontent.classList.add("crcontent");
@@ -161,6 +165,10 @@ export function createCard(
       doneColumn.appendChild(card);
       break;
   }
+  card.addEventListener("click", () => {
+    const cardID = card.id;
+    window.location.href = `../../TaskPage.html?id=${cardID}`;
+  });
 }
 
 function formatGeorgianDate(isoString) {
@@ -189,7 +197,7 @@ function formatGeorgianDate(isoString) {
 
 export async function uploadTask(task) {
   if (isValidTask(task)) {
-    const token = "9e790aab-88a7-4478-a1ba-28b942cd8f05";
+    const token = "9e7ac960-f8ed-447e-8d25-4e47004e4040";
 
     const formData = new URLSearchParams();
     formData.append("name", task.name);

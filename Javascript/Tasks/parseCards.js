@@ -3,7 +3,7 @@ import { createCard } from "./CardCreation.js";
 document.addEventListener("DOMContentLoaded", () => parseCards());
 
 async function parseCards() {
-  const token = "9e790aab-88a7-4478-a1ba-28b942cd8f05";
+  const token = "9e7ac960-f8ed-447e-8d25-4e47004e4040";
   try {
     const response = await fetch(
       "https://momentum.redberryinternship.ge/api/tasks",

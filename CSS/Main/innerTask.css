@@ -1,0 +1,124 @@
+@font-face {
+  font-family: "FiraGO";
+  src: url("../../Font/FiraGO-Book.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "FiraGO", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.page {
+  width: 1680px;
+  height: 1007px;
+  display: flex;
+  margin-left: 120px;
+  justify-content: space-between;
+}
+.commentsdiv {
+  width: 741px;
+  height: 975px;
+}
+.carddiv {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.top {
+  width: 715px;
+  height: 239px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.prdep {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.depdiv {
+  box-sizing: border-box;
+  height: 29px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  border: none;
+  font-size: 16px;
+  color: white;
+}
+.designdep {
+  background-color: #ff66a8;
+}
+.marketingdep {
+  background-color: #fd9a6a;
+}
+.ITdep {
+  background-color: #ffd86d;
+}
+.logisticsdep {
+  background-color: #89b6ff;
+}
+.administrationdep {
+  background-color: rgb(214, 75, 75);
+}
+.administrationdep {
+  background-color: rgb(214, 75, 75);
+}
+.HRdep {
+  background-color: rgb(69, 230, 125);
+}
+.financesdep {
+  background-color: rgb(149, 84, 182);
+}
+.mediadep {
+  background-color: rgb(41, 64, 179);
+}
+.prioritydiv {
+  height: 32px;
+  padding: 4px 5px;
+  border-radius: 4px;
+  display: flex;
+  gap: 4px;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.lowpriority {
+  border: 0.5px solid #08a508;
+  color: #08a508;
+}
+.mediumpriority {
+  border: 0.5px solid #ffbe0b;
+  color: #ffbe0b;
+}
+.highpriority {
+  border: 0.5px solid #fa4d4d;
+  color: #fa4d4d;
+}
+.bottom {
+  width: 493px;
+  height: 277px;
+  display: flex;
+  flex-direction: column;
+}
+
+.taskitems {
+  width: 493px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.commentsdiv {
+  margin-top: 40px;
+  background-color: #f8f3fea6;
+  border-radius: 10px;
+  border: 0.3px solid #ddd2ff;
+}

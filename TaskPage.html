@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task info</title>
+    <link rel="stylesheet" href="CSS/Main/header.css" />
+    <link rel="stylesheet" href="CSS/Main/innerTask.css" />
+    <script src="Javascript/Input/fetchTaskPage.js" defer></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="landing">
+        <img
+          src="Images/MomentumLogo.png"
+          alt="MLogo"
+          width="210px"
+          height="38px"
+          onclick="window.location.href='index.html'"
+          style="cursor: pointer"
+        />
+        <div class="landingbuttons">
+          <button
+            style="
+              width: 225px;
+              height: 39px;
+              background-color: white;
+              font-size: 16px;
+              border-radius: 5px;
+              border: 1px solid #8338ec;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-weight: 400;
+              color: #212529;
+              cursor: pointer;
+            "
+            onclick="event.stopPropagation(); coworkerDivVisible(true);"
+          >
+            თანამშრომლის შექმნა
+          </button>
+
+          <button
+            style="
+              width: 268px;
+              height: 40px;
+              font-size: 16px;
+              border-radius: 5px;
+              background-color: #8338ec;
+              border: none;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-weight: 400;
+              color: white;
+              cursor: pointer;
+            "
+            onclick="window.location.href='TaskCreation.html'"
+          >
+            <span style="font-size: 30px; margin-right: 5px">+</span> შექმენი
+            ახალი დავალება
+          </button>
+        </div>
+      </div>
+      <div class="page">
+        <div class="carddiv">
+          <div class="top">
+            <div class="prdep">
+              <div class="prioritydiv mediumpriority"></div>
+              <div class="depdiv"></div>
+            </div>
+            <div
+              class="cardheader"
+              style="
+                width: 715px;
+                height: 60px;
+                font-size: 34px;
+                font-weight: 600;
+                overflow-x: auto;
+                overflow-y: hidden;
+                white-space: nowrap;
+              "
+            ></div>
+            <div
+              class="cardcontent"
+              style="
+                font-size: 18px;
+                font-weight: 400;
+                width: 715px;
+                height: 108px;
+                overflow-x: hidden;
+                overflow-y: auto;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                white-space: normal;
+              "
+            ></div>
+          </div>
+          <div class="bottom">
+            <div style="font-size: 24px; font-weight: 600; margin-bottom: 15px">
+              დავალების დეტალები
+            </div>
+            <div class="taskitems">
+              <div style="display: flex; align-items: center; gap: 6px">
+                <img src="Images/statusimg.png" alt="st" /> სტატუსი
+              </div>
+              <select
+                name="stselect"
+                id="stselect"
+                style="
+                  border-radius: 5px;
+                  border: 1px solid #dee2e6;
+                  background-color: white;
+                  width: 259px;
+                  padding: 14px;
+                "
+              ></select>
+            </div>
+            <div class="taskitems">
+              <div>
+                <img src="Images/coworkerimg.png" alt="cw" /> თანამშრომელი
+              </div>
+              <div
+                class="employee"
+                style="
+                  display: flex;
+                  width: 178px;
+                  height: 41px;
+                  gap: 12px;
+                  margin-top: 10px;
+                  box-sizing: border-box;
+                  margin-right: 80px;
+                "
+              >
+                <img
+                  src="Images/coworker.png"
+                  alt="cw"
+                  id="coworkerimg"
+                  style="border-radius: 50%; object-fit: cover; margin-top: 8px"
+                  width="32px"
+                  height="32px"
+                />
+                <div class="empdiv" style="display: flex">
+                  <div
+                    class="depname"
+                    style="
+                      position: absolute;
+                      font-size: 11px;
+                      font-weight: 100;
+                      width: 300px;
+                      height: 13px;
+                      color: #474747;
+                    "
+                  ></div>
+                  <div
+                    class="empname"
+                    style="font-size: 14px; font-weight: 400; margin-top: 15px"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div class="taskitems">
+              <div style="display: flex; align-items: center; gap: 6px">
+                <img src="Images/deadlineimg.png" alt="di" /> დავალების ვადა
+              </div>
+              <div class="deadline" style="margin-right: 135px">02/2/2025</div>
+            </div>
+          </div>
+        </div>
+        <div class="commentsdiv"></div>
+      </div>
+    </div>
+  </body>
+</html>

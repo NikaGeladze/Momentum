@@ -28,7 +28,11 @@ function validateEmployee(emp) {
   const textareasurname = document.getElementById("surnamein");
   const minsurnametxt = document.querySelector(".surconstraint2");
   const maxsurnametxt = document.querySelector(".surconstraint255");
+
   let isValid = true;
+
+  emp.name = emp.name.trim();
+  emp.surname = emp.surname.trim();
 
   if (emp.name.length < 2) {
     minnametext.style.color = "red";
@@ -86,7 +90,7 @@ function uploadEmployee(emp) {
   formData.append("avatar", emp.avatar);
   formData.append("department_id", emp["department_id"]);
 
-  const token = "9e790aab-88a7-4478-a1ba-28b942cd8f05";
+  const token = "9e7ac960-f8ed-447e-8d25-4e47004e4040";
 
   fetch("https://momentum.redberryinternship.ge/api/employees", {
     method: "POST",
