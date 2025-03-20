@@ -29,9 +29,8 @@ async function fetchDepartments() {
     const response = await fetch(
       "https://momentum.redberryinternship.ge/api/departments"
     );
-
     const departmentsData = await response.json();
-    displayDepartments(departmentsData);
+    displayTaskDepartments(departmentsData);
   } catch (error) {
     console.error("Error fetching departments:", error);
   }
@@ -39,7 +38,7 @@ async function fetchDepartments() {
 
 async function fetchEmployees(dep_id) {
   try {
-    const token = "9e788fde-10d9-4ca8-9d09-9ca169c0db4c";
+    const token = "9e790aab-88a7-4478-a1ba-28b942cd8f05";
     const response = await fetch(
       "https://momentum.redberryinternship.ge/api/employees",
       {
@@ -110,7 +109,7 @@ function displayStatuses(statusesData) {
 
   statusOptions.dispatchEvent(new Event("change"));
 }
-function displayDepartments(departmentsData) {
+function displayTaskDepartments(departmentsData) {
   const departmentsOptions = document.getElementById("departmentoptions");
   departmentsData.forEach((dep, index) => {
     const option = document.createElement("option");

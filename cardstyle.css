@@ -38,14 +38,24 @@
 .prioritydiv {
   /*for medium priority*/
   border-radius: 4px;
-  border: 0.5px solid #ffbe0b;
   padding: 4px;
   display: flex;
   gap: 4px;
   font-size: 12px;
-  color: #ffbe0b;
   justify-content: center;
   align-items: center;
+}
+.lowpriority {
+  border: 0.5px solid #08a508;
+  color: #08a508;
+}
+.mediumpriority {
+  border: 0.5px solid #ffbe0b;
+  color: #ffbe0b;
+}
+.highpriority {
+  border: 0.5px solid #fa4d4d;
+  color: #fa4d4d;
 }
 .depdiv {
   box-sizing: border-box;
@@ -58,9 +68,35 @@
   border-radius: 15px;
   border: none;
   padding: 5px 9px;
-  background-color: #ff66a8;
   font-size: 12px;
   color: white;
+}
+.designdep {
+  background-color: #ff66a8;
+}
+.marketingdep {
+  background-color: #fd9a6a;
+}
+.ITdep {
+  background-color: #ffd86d;
+}
+.logisticsdep {
+  background-color: #89b6ff;
+}
+.administrationdep {
+  background-color: rgb(214, 75, 75);
+}
+.administrationdep {
+  background-color: rgb(214, 75, 75);
+}
+.HRdep {
+  background-color: rgb(69, 230, 125);
+}
+.financesdep {
+  background-color: rgb(149, 84, 182);
+}
+.mediadep {
+  background-color: rgb(41, 64, 179);
 }
 .datedue {
   display: flex;

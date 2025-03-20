@@ -1,10 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let element = document.querySelector(".crcontent");
-  let text = element.textContent.trim();
-
-  if (text.length > 100) {
-    element.textContent = text.substring(0, 100) + "...";
-  }
   document.addEventListener("click", function (event) {
     const coworkerDiv = document.querySelector(".coworkercreate");
 
@@ -29,10 +23,20 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   const textareaname = document.getElementById("namein");
+  textareaname.addEventListener("change", () => {
+    textareaname.style.border = "1px solid #CED4DA";
+  });
   const minnametext = document.querySelector(".nmconstraint2");
   const maxnametext = document.querySelector(".nmconstraint255");
 
   const textareasurname = document.getElementById("surnamein");
+  textareasurname.addEventListener("change", () => {
+    textareasurname.style.border = "1px solid #CED4DA";
+  });
+  const avatarbx = document.getElementById("avatarbox");
+  avatarbx.addEventListener("change", () => {
+    avatarbx.style.border = "2px dotted #ced4daaf";
+  });
   const minsurnametxt = document.querySelector(".surconstraint2");
   const maxsurnametxt = document.querySelector(".surconstraint255");
 
@@ -57,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     isValidHeader = textLength > 2 && textLength <= 255;
-    console.log("Is valid:", isValidHeader);
   });
   textareasurname.addEventListener("input", function () {
     const textLength = textareasurname.value.length;

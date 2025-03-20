@@ -6,9 +6,13 @@
     <title>შექმენი დავალება</title>
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="taskCreation.css" />
+    <link rel="stylesheet" href="coworkerModule.css" />
     <script src="FetchData.js" defer></script>
     <script src="Validation.js" defer></script>
     <script type="module" src="getTaskInput.js" defer></script>
+    <script src="employeeCreation.js" defer></script>
+    <script src="controlCoworkerDiv.js" defer></script>
+    <script src="handleFrontData.js" defer></script>
   </head>
   <body>
     <div class="main">
@@ -37,6 +41,7 @@
               color: #212529;
               cursor: pointer;
             "
+            onclick="event.stopPropagation(); coworkerDivVisible(true);"
           >
             თანამშრომლის შექმნა
           </button>
@@ -180,8 +185,18 @@
                   cursor: pointer;
                 "
               >
-                <img src="Images/pluscoworker.png" alt="addcwk" /> დაამატე
-                თანამშრომელი
+                <div
+                  onclick="event.stopPropagation(); coworkerDivVisible(true);"
+                  style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5px;
+                  "
+                >
+                  <img src="Images/pluscoworker.png" alt="addcwk" />
+                  დაამატე თანამშრომელი
+                </div>
               </div>
             </div>
             <div class="deadlinediv">
@@ -189,6 +204,164 @@
               <input type="date" id="date" name="date" />
             </div>
             <button class="createbtn">დავალების შექმნა</button>
+          </div>
+        </div>
+      </div>
+      <div class="overlay">
+        <div class="coworkercreate">
+          <img
+            src="Images/Cancel.png"
+            alt="cancel"
+            class="cancel"
+            width="40px"
+            height="40px"
+            style="align-self: flex-end; cursor: pointer"
+            onclick="coworkerDivVisible(false);"
+          />
+          <div style="font-size: 32px; font-weight: 600">
+            თანამშრომლის დამატება
+          </div>
+          <div class="namesurname">
+            <div class="name">
+              <div style="font-size: 14px; font-weight: 600; color: #343a40">
+                სახელი<sup>*</sup>
+              </div>
+              <textarea
+                name="headerin"
+                id="namein"
+                style="
+                  width: 384px;
+                  height: 42px;
+                  resize: none;
+                  border-radius: 6px;
+                  padding: 10px;
+                  border: 1px solid #ced4da;
+                  box-sizing: border-box;
+                "
+              ></textarea>
+              <div
+                class="nmconstraint2"
+                style="
+                  font-size: 10px;
+                  font-weight: 350px;
+                  color: #6c757d;
+                  display: flex;
+                  align-items: center;
+                  gap: 2px;
+                "
+              >
+                მინიმუმ 2 სიმბოლო
+              </div>
+              <div
+                class="nmconstraint255"
+                style="font-size: 10px; font-weight: 350px; color: #6c757d"
+              >
+                მაქსიმუმ 255 სიმბოლო
+              </div>
+            </div>
+            <div class="surname">
+              <div style="font-size: 14px; font-weight: 600; color: #343a40">
+                გვარი<sup>*</sup>
+              </div>
+              <textarea
+                name="headerin"
+                id="surnamein"
+                style="
+                  width: 384px;
+                  height: 42px;
+                  resize: none;
+                  border-radius: 6px;
+                  padding: 10px;
+                  border: 1px solid #ced4da;
+                  box-sizing: border-box;
+                "
+              ></textarea>
+              <div
+                class="surconstraint2"
+                style="font-size: 10px; font-weight: 350px; color: #6c757d"
+              >
+                მინიმუმ 2 სიმბოლო
+              </div>
+              <div
+                class="surconstraint255"
+                style="font-size: 10px; font-weight: 350px; color: #6c757d"
+              >
+                მაქსიმუმ 255 სიმბოლო
+              </div>
+            </div>
+          </div>
+          <div class="avatarslct">
+            <div style="font-size: 14px; font-weight: 600; color: #343a40">
+              ავატარი<sup>*</sup>
+            </div>
+            <div id="avatarbox">
+              <img
+                src="Images/coworker3j.jpeg"
+                alt="cw"
+                width="88px"
+                height="88px"
+                style="border-radius: 50%; object-fit: cover"
+                id="avatarimg"
+              />
+              <input
+                type="file"
+                id="fileInput"
+                accept="image/*"
+                style="display: none"
+              />
+            </div>
+          </div>
+          <div class="depselect" style="align-self: flex-start">
+            <div style="font-size: 14px; font-weight: 600; color: #343a40">
+              დეპარტმენტი<sup>*</sup>
+            </div>
+            <select
+              name="depslct"
+              id="depslct"
+              style="
+                width: 384px;
+                height: 42px;
+                border-radius: 6px;
+                border: 1px solid #ced4da;
+                padding: 10px;
+                background-color: white;
+              "
+            ></select>
+          </div>
+          <div class="cancelbtns">
+            <button
+              class="cancel"
+              style="
+                width: 102px;
+                height: 42px;
+                border-radius: 5px;
+                border: 1px solid #8338ec;
+                padding: 10px 16px;
+                background-color: white;
+                font-size: 16px;
+                cursor: pointer;
+              "
+              onclick="coworkerDivVisible(false);"
+            >
+              გაუქმება
+            </button>
+            <button
+              class="addcoworkerbtn"
+              style="
+                width: 263px;
+                height: 42px;
+                border-radius: 5px;
+                border: none;
+                padding: 10px 20px;
+                background-color: #8338ec;
+                font-size: 18px;
+                color: white;
+                cursor: pointer;
+              "
+              onclick="addEmployee();"
+            >
+              დაამატე თანამშრომელი
+            </button>
           </div>
         </div>
       </div>

@@ -5,10 +5,30 @@ const maxnametext = document.querySelector(".hdconstraint255");
 const textareads = document.getElementById("descr");
 const constraintMinds = document.querySelector(".descrconstraint2");
 const constraintMaxds = document.querySelector(".descrconstraint255");
+const coworker = document.getElementById("coworkerslct");
+const date = document.getElementById("date");
 
 let isValidHeader = false;
 
 let isValidDescr = true;
+
+coworker.addEventListener("change", function () {
+  coworker.style.border = "1px solid #DEE2E6";
+});
+
+date.addEventListener("change", function () {
+  date.style.border = "1px solid #DEE2E6";
+});
+
+const dateInput = document.getElementById("date");
+
+const today = new Date();
+
+today.setDate(today.getDate() + 1);
+
+const tomorrow = today.toISOString().split("T")[0];
+
+dateInput.value = tomorrow;
 
 textareaname.addEventListener("input", function () {
   const textLength = textareaname.value.length;
@@ -18,7 +38,7 @@ textareaname.addEventListener("input", function () {
     maxnametext.style.color = "#6c757d";
   }
 
-  if (textLength > 2) {
+  if (textLength >= 2) {
     minnametext.style.color = "green";
   } else {
     minnametext.style.color = "#6c757d";

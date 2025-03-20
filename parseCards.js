@@ -3,7 +3,7 @@ import { createCard } from "./CardCreation.js";
 document.addEventListener("DOMContentLoaded", () => parseCards());
 
 async function parseCards() {
-  const token = "9e788fde-10d9-4ca8-9d09-9ca169c0db4c";
+  const token = "9e790aab-88a7-4478-a1ba-28b942cd8f05";
   try {
     const response = await fetch(
       "https://momentum.redberryinternship.ge/api/tasks",
@@ -24,11 +24,12 @@ async function parseCards() {
       const deptxt = card.department.name;
       const deadline = new Date(card.due_date).toISOString().split("T")[0];
       const header = card.name;
-      const content = card.description;
+      const content = card.description ?? " ";
       const coworker = card.employee.avatar;
       const commentcount = 0;
 
       createCard(
+        card.id,
         primg,
         prtext,
         deptxt,
@@ -36,7 +37,8 @@ async function parseCards() {
         header,
         content,
         coworker,
-        commentcount
+        commentcount,
+        card.status.name
       );
     });
   } catch (error) {

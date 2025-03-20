@@ -6,14 +6,14 @@ document
 
 function taskInput() {
   const header = document.getElementById("headerin").value;
-  const descr = document.getElementById("descr").value;
+  const descr = document.getElementById("descr").value ?? "";
   const priority = parseInt(document.getElementById("priorityoptions").value);
   const status = parseInt(document.getElementById("statusoptions").value);
   const department = parseInt(
     document.getElementById("departmentoptions").value
   );
-  const coworker = parseInt(document.getElementById("coworkerslct").value);
   const date_due = document.getElementById("date").value;
+  const coworker = parseInt(document.getElementById("coworkerslct").value);
 
   let task = {
     name: header,
