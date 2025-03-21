@@ -197,7 +197,7 @@ function formatGeorgianDate(isoString) {
 
 export async function uploadTask(task) {
   if (isValidTask(task)) {
-    const token = "9e7ac960-f8ed-447e-8d25-4e47004e4040";
+    const token = "9e7c62ac-f010-4a05-9746-7bed1a0f3803";
 
     const formData = new URLSearchParams();
     formData.append("name", task.name);
@@ -222,6 +222,7 @@ export async function uploadTask(task) {
 
       const data = await response.json();
       console.log("Task uploaded successfully:", data);
+      localStorage.clear();
       window.location.href = "index.html";
     } catch (error) {
       console.log("Error uploading task:", error);
@@ -239,8 +240,8 @@ function isValidTask(task) {
   const minDescText = document.querySelector(".descrconstraint2");
   const maxDescText = document.querySelector(".descrconstraint255");
   const dueDateField = document.getElementById("date");
-
-  if (!task.name || task.name.length < 2) {
+  console.log(task.name.length);
+  if (!task.name || task.name.length < 3) {
     minNameText.style.color = "red";
     isValid = false;
   }

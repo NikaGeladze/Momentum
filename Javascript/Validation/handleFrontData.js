@@ -59,8 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       maxnametext.style.color = "#6c757d";
     }
-
-    isValidHeader = textLength > 2 && textLength <= 255;
   });
   textareasurname.addEventListener("input", function () {
     const textLength = textareasurname.value.length;
@@ -81,9 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       maxsurnametxt.style.color = "#6c757d";
     }
-
-    //isValidHeader = textLength > 2 && textLength <= 255;
-    //console.log("Is valid:", isValidHeader);
   });
 });
 
