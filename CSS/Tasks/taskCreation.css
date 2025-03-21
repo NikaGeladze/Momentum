@@ -157,6 +157,10 @@
   padding: 14px;
   resize: none;
 }
+#headerin:focus,
+#descr:focus {
+  outline: none;
+}
 #descr {
   width: 550px;
   height: 133px;

@@ -8,16 +8,13 @@ const constraintMaxds = document.querySelector(".descrconstraint255");
 const coworker = document.getElementById("coworkerslct");
 const date = document.getElementById("date");
 
-let isValidHeader = false;
-
-let isValidDescr = true;
-
 coworker.addEventListener("change", function () {
   coworker.style.border = "1px solid #DEE2E6";
 });
 
 date.addEventListener("change", function () {
   date.style.border = "1px solid #DEE2E6";
+  localStorage.setItem("date", date.value);
 });
 
 const dateInput = document.getElementById("date");
@@ -28,33 +25,27 @@ today.setDate(today.getDate() + 1);
 
 const tomorrow = today.toISOString().split("T")[0];
 
-dateInput.value = tomorrow;
+if (localStorage.getItem("date") == null) dateInput.value = tomorrow;
+else {
+  dateInput.value = localStorage.getItem("date");
+}
 
 textareaname.addEventListener("input", function () {
-  const textLength = textareaname.value.length;
-
-  if (textareaname.value === "") {
-    minnametext.style.color = "#6c757d";
-    maxnametext.style.color = "#6c757d";
-  }
-
-  if (textLength >= 2) {
-    minnametext.style.color = "green";
-  } else {
-    minnametext.style.color = "#6c757d";
-  }
-
-  if (textLength <= 255 && textLength != 0) {
-    maxnametext.style.color = "green";
-  } else {
-    maxnametext.style.color = "#6c757d";
-  }
-
-  isValidHeader = textLength > 2 && textLength <= 255;
-  console.log("Is valid:", isValidHeader);
+  validateHeader();
+  localStorage.setItem("header", textareaname.value);
 });
 
 textareads.addEventListener("input", function () {
+  validateDescription();
+  localStorage.setItem("descr", textareads.value);
+});
+
+textareaname.value = localStorage.getItem("header") || "";
+textareads.value = localStorage.getItem("descr") || "";
+validateDescription();
+validateHeader();
+
+function validateDescription() {
   const text = textareads.value.trim();
   const wordCount = text.split(/\s+/).filter((word) => word.length > 0).length;
   const charCount = text.length;
@@ -75,12 +66,25 @@ textareads.addEventListener("input", function () {
     } else {
       constraintMaxds.style.color = "#6c757d";
     }
-
-    isValidDescr = wordCount >= 4 && charCount <= 255;
   }
-});
+}
+function validateHeader() {
+  const textLength = textareaname.value.length;
 
-// const btn = document.querySelector(".createbtn");
-// btn.addEventListener("click", function () {
-//   console.log(isValidDescr && isValidHeader);
-// });
+  if (textareaname.value === "") {
+    minnametext.style.color = "#6c757d";
+    maxnametext.style.color = "#6c757d";
+  }
+
+  if (textLength >= 3) {
+    minnametext.style.color = "green";
+  } else {
+    minnametext.style.color = "#6c757d";
+  }
+
+  if (textLength <= 255 && textLength != 0) {
+    maxnametext.style.color = "green";
+  } else {
+    maxnametext.style.color = "#6c757d";
+  }
+}

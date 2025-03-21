@@ -38,7 +38,7 @@ async function fetchDepartments() {
 
 async function fetchEmployees(dep_id) {
   try {
-    const token = "9e7ac960-f8ed-447e-8d25-4e47004e4040";
+    const token = "9e7c62ac-f010-4a05-9746-7bed1a0f3803";
     const response = await fetch(
       "https://momentum.redberryinternship.ge/api/employees",
       {
@@ -67,6 +67,7 @@ async function fetchEmployees(dep_id) {
 function displayPriorities(prioritiesData) {
   const priorityOptions = document.getElementById("priorityoptions");
   const prioImg = document.querySelector(".prioimg");
+  let prevPrioID = localStorage.getItem("prio") || null;
 
   prioritiesData.forEach((priority, index) => {
     const option = document.createElement("option");
@@ -74,11 +75,9 @@ function displayPriorities(prioritiesData) {
     option.textContent = priority.name;
     option.setAttribute("img", priority.icon);
 
-    if (index === 1) {
+    if (index === 1 && prevPrioID == null) {
       option.selected = true;
-      prioImg.src = priority.icon;
-    }
-
+    } else if (priority.id === parseInt(prevPrioID)) option.selected = true;
     priorityOptions.appendChild(option);
   });
 
@@ -91,39 +90,49 @@ function displayPriorities(prioritiesData) {
   });
 
   priorityOptions.dispatchEvent(new Event("change"));
+
+  priorityOptions.addEventListener("change", () => {
+    localStorage.setItem("prio", priorityOptions.value);
+  });
 }
 
 function displayStatuses(statusesData) {
   const statusOptions = document.getElementById("statusoptions");
+  let prevStatID = localStorage.getItem("status") || null;
   statusesData.forEach((status, index) => {
     const option = document.createElement("option");
     option.value = status.id;
     option.textContent = status.name;
 
-    if (index === 0) {
+    if (index === 0 && prevStatID == null) {
       option.selected = true;
-    }
+    } else if (status.id === parseInt(prevStatID)) option.selected = true;
 
     statusOptions.appendChild(option);
   });
-
   statusOptions.dispatchEvent(new Event("change"));
+
+  statusOptions.addEventListener("change", () => {
+    localStorage.setItem("status", statusOptions.value);
+  });
 }
 function displayTaskDepartments(departmentsData) {
   const departmentsOptions = document.getElementById("departmentoptions");
+  let prevDepID = localStorage.getItem("dep") || null;
   departmentsData.forEach((dep, index) => {
     const option = document.createElement("option");
     option.value = dep.id;
     option.textContent = dep.name;
 
-    if (index === 0) {
+    if (index === 0 && prevDepID == null) {
       option.selected = true;
-    }
+    } else if (dep.id === parseInt(prevDepID)) option.selected = true;
 
     departmentsOptions.appendChild(option);
   });
 
   departmentsOptions.addEventListener("change", function () {
+    localStorage.setItem("dep", departmentsOptions.value);
     fetchEmployees(departmentsOptions.value);
   });
 
@@ -133,6 +142,7 @@ function displayEmployees(employeeData) {
   const employeeOptions = document.getElementById("coworkerslct");
   eraseFrontEmployees(employeeOptions);
   const employeeImg = document.querySelector(".coworkerimg");
+  let prevEmpID = localStorage.getItem("emp") || null;
 
   employeeData.forEach((emp, index) => {
     const option = document.createElement("option");
@@ -140,9 +150,12 @@ function displayEmployees(employeeData) {
     option.textContent = emp.name + " " + emp.surname;
     option.setAttribute("img", emp.avatar);
 
-    if (index === 0) {
+    if (index === 0 && prevEmpID == null) {
       option.selected = true;
-      employeeImg.src = emp.icon;
+      employeeImg.src = option.icon;
+    } else if (emp.id === parseInt(prevEmpID)) {
+      option.selected = true;
+      employeeImg.src = option.icon;
     }
 
     employeeOptions.appendChild(option);
@@ -152,7 +165,7 @@ function displayEmployees(employeeData) {
     const selectedOption = this.options[this.selectedIndex];
     const selectedIcon = selectedOption.getAttribute("img");
     const selectedId = selectedOption.value;
-
+    localStorage.setItem("emp", employeeOptions.value);
     employeeImg.src = selectedIcon;
   });
   employeeImg.style.display = "inline";
