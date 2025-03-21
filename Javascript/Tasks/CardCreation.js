@@ -167,7 +167,7 @@ export function createCard(
   }
   card.addEventListener("click", () => {
     const cardID = card.id;
-    window.location.href = `../../TaskPage.html?id=${cardID}`;
+    window.location.href = `../../Momentum/TaskPage.html?id=${cardID}`;
   });
 }
 
