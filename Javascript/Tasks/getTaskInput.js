@@ -25,4 +25,5 @@ function taskInput() {
     employee: { id: coworker },
   };
   uploadTask(task);
+  localStorage.clear();
 }

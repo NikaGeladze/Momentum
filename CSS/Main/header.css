@@ -1,3 +1,17 @@
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar {
+  display: none; /*es moashore tuginda vertical kide*/
+}
+
+.scrollable {
+  overflow: auto !important;
+  scrollbar-width: auto;
+}
+
 .landing {
   position: fixed;
   top: 0;
@@ -20,6 +34,8 @@
   gap: 40px;
 }
 .main {
+  width: 1920px;
+  height: 1080px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

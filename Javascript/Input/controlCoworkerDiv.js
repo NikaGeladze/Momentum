@@ -19,5 +19,7 @@ function coworkerDivVisible(isVisible) {
     overlay.querySelectorAll("select").forEach((select) => {
       select.selectedIndex = 0; // Reset dropdowns
     });
+    document.querySelector(".initialupload").style.display = "flex";
+    document.querySelector(".selected").style.display = "none";
   }
 }

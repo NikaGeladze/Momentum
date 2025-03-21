@@ -293,14 +293,38 @@
               ავატარი<sup>*</sup>
             </div>
             <div id="avatarbox">
-              <img
-                src="Images/coworker3j.jpeg"
-                alt="cw"
-                width="88px"
-                height="88px"
-                style="border-radius: 50%; object-fit: cover"
-                id="avatarimg"
-              />
+              <div class="selected" style="display: none">
+                <img
+                  src="Images/coworker3j.jpeg"
+                  alt="cw"
+                  width="88px"
+                  height="88px"
+                  style="border-radius: 50%; object-fit: cover"
+                  id="avatarimg"
+                />
+                <img
+                  src="Images/dlt.png"
+                  alt="dlt"
+                  id="imgdlt"
+                  width="24px"
+                  height="24px"
+                  style="
+                    position: absolute;
+                    margin-top: 64px;
+                    left: calc(100% - 437px);
+                  "
+                />
+              </div>
+
+              <div class="initialupload" style="display: flex">
+                <img
+                  src="Images/newimg.png"
+                  alt="upload"
+                  width="24px"
+                  height="24px"
+                />
+                ატვირთე ფოტო
+              </div>
               <input
                 type="file"
                 id="fileInput"

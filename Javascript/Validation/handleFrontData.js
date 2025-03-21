@@ -6,8 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
       coworkerDivVisible(false);
     }
   });
-  document.getElementById("avatarbox").addEventListener("click", function () {
-    document.getElementById("fileInput").click();
+  document.getElementById("avatarbox").addEventListener("click", function (e) {
+    if (e.target.id != document.getElementById("imgdlt").id)
+      document.getElementById("fileInput").click();
   });
 
   document
@@ -19,9 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
         reader.onload = function (e) {
           document.getElementById("avatarimg").src = e.target.result;
         };
+        isImageUploaded(true);
         reader.readAsDataURL(file);
       }
     });
+  document.getElementById("imgdlt").addEventListener("click", () => {
+    isImageUploaded(false);
+    document.getElementById("fileInput").value = "";
+  });
   const textareaname = document.getElementById("namein");
   textareaname.addEventListener("change", () => {
     textareaname.style.border = "1px solid #CED4DA";
@@ -81,6 +87,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+function isImageUploaded(isUploaded) {
+  if (isUploaded) {
+    document.querySelector(".initialupload").style.display = "none";
+    document.querySelector(".selected").style.display = "flex";
+  } else {
+    document.querySelector(".initialupload").style.display = "flex";
+    document.querySelector(".selected").style.display = "none";
+  }
+}
 
 async function fetchDepartments() {
   try {

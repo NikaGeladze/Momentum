@@ -28,6 +28,14 @@
   z-index: 3000;
   gap: 37px;
 }
+.initialupload {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
 .namesurname {
   display: flex;
   justify-content: space-between;

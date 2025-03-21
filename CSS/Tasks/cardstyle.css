@@ -10,6 +10,7 @@
   border-radius: 15px;
   gap: 28px;
   cursor: pointer;
+  overflow: hidden;
 }
 .todo {
   border: 1px solid #ffbe0b;
