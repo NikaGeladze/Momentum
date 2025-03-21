@@ -38,7 +38,7 @@ async function fetchDepartments() {
 
 async function fetchEmployees(dep_id) {
   try {
-    const token = "9e7c62ac-f010-4a05-9746-7bed1a0f3803";
+    const token = "9e7cb42d-74a4-4063-a267-c9493b4ca9ac";
     const response = await fetch(
       "https://momentum.redberryinternship.ge/api/employees",
       {

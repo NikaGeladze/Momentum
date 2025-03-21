@@ -197,7 +197,7 @@ function formatGeorgianDate(isoString) {
 
 export async function uploadTask(task) {
   if (isValidTask(task)) {
-    const token = "9e7c62ac-f010-4a05-9746-7bed1a0f3803";
+    const token = "9e7cb42d-74a4-4063-a267-c9493b4ca9ac";
 
     const formData = new URLSearchParams();
     formData.append("name", task.name);

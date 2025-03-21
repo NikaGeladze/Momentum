@@ -7,11 +7,6 @@ html::-webkit-scrollbar {
   display: none; /*es moashore tuginda vertical kide*/
 }
 
-.scrollable {
-  overflow: auto !important;
-  scrollbar-width: auto;
-}
-
 .landing {
   position: fixed;
   top: 0;
